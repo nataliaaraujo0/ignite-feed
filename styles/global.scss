@@ -1,6 +1,8 @@
 :root {
   --green-500: #00875f;
-  --purple-700: #0c1026;
+
+  --purple-700: #230d48;
+  --purple-800: #0c1026;
   --blue-800: #0c1026;
   --blue-900: #04050d;
 
@@ -16,7 +18,7 @@
 }
 
 body {
-  background-color: var(--blue-900);
+  background-color: var(--blue-800);
   color: var(--gray-300);
   -webkit-font-smoothing: antialised;
 }
