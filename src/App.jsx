@@ -1,5 +1,11 @@
+import { Header } from "./components/Header";
+import "../styles/global.scss";
 function App() {
-  return <h1>ola mundo</h1>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
