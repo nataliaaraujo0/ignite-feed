@@ -14,10 +14,6 @@ function App() {
             author="Naruto"
             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi dolorum nesciunt dolore repellendus, modi, voluptatum qui officia dignissimos nulla aliquam molestias ipsa eveniet id esse tenetur ad nostrum libero consequatur!"
           />
-          <Post
-            author="Naruto"
-            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi dolorum nesciunt dolore repellendus, modi, voluptatum qui officia dignissimos nulla aliquam molestias ipsa eveniet id esse tenetur ad nostrum libero consequatur!"
-          />
         </main>
       </div>
     </>
