@@ -1,13 +1,14 @@
 import styles from "./post.module.scss";
-import avatar from "../../assets/avatar.png";
 import { Comment } from "../Comment";
+import { Avatar } from "../Avatar";
 
 export function Post() {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.avatar} src={avatar} />
+          <Avatar src="https://github.com/nataliaaraujo0.png" />
+
           <div className={styles.authorInfo}>
             <strong>Alucard</strong>
             <span>WEB Developer</span>
