@@ -2,21 +2,27 @@ import styles from "./post.module.scss";
 import { Comment } from "../Comment";
 import { Avatar } from "../Avatar";
 
-export function Post(props) {
-  console.log(props);
+export function Post({ author, publishedAt }) {
+  const publishedAtFormatted = new Intl.DateTimeFormat("pt-BR", {
+    day: "2-digit",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(publishedAt);
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src="https://github.com/nataliaaraujo0.png" />
+          <Avatar src={author.avatarUrl} />
 
           <div className={styles.authorInfo}>
-            <strong>Alucard</strong>
-            <span>WEB Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
         <time title="26 de Junho de 2022" dateTime="2022-06-26 12:13:04">
-          Publicado há 1h
+          {publishedAtFormatted}
         </time>
       </header>
 
