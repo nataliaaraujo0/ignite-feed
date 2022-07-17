@@ -3,9 +3,16 @@ import { Comment } from "../Comment";
 import { Avatar } from "../Avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
-import { LineSegment } from "phosphor-react";
+import { useState } from "react";
 
 export function Post({ author, publishedAt, content }) {
+  const [comments, setComments] = useState([1, 2]);
+
+  function handleCreateNewComment() {
+    event.preventDefault();
+    setComments([1, 2, 3]);
+  }
+
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -52,7 +59,7 @@ export function Post({ author, publishedAt, content }) {
         })}
       </div>
 
-      <form className={styles.comentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.comentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea placeholder="Deixe um comentário" />
         <footer>
@@ -60,10 +67,9 @@ export function Post({ author, publishedAt, content }) {
         </footer>
       </form>
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment) => {
+          return <Comment />;
+        })}
       </div>
     </article>
   );
