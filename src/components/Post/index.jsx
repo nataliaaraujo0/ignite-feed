@@ -9,8 +9,13 @@ export function Post({ author, publishedAt, content }) {
   const [newCommentText, setnewCommentText] = useState("");
   const [comments, setComments] = useState(["post muito bacana, heim?!"]);
 
-  function deleteComment(comment) {
-    console.log(`Deletar comentário' ${comment}`);
+  function deleteComment(commentToDelete) {
+    alert(`Deletar comentário' ${commentToDelete}`);
+
+    const commentsWithoutDeleteOne = comments.filter((comment) => {
+      return comment !== commentToDelete;
+    });
+    setComments(commentsWithoutDeleteOne);
   }
 
   function handleNewCommentChange() {
