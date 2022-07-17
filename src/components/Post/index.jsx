@@ -9,6 +9,10 @@ export function Post({ author, publishedAt, content }) {
   const [newCommentText, setnewCommentText] = useState("");
   const [comments, setComments] = useState(["post muito bacana, heim?!"]);
 
+  function deleteComment(comment) {
+    console.log(`Deletar comentário' ${comment}`);
+  }
+
   function handleNewCommentChange() {
     setnewCommentText(event.target.value);
   }
@@ -81,7 +85,13 @@ export function Post({ author, publishedAt, content }) {
       </form>
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment content={comment} key={comment} />;
+          return (
+            <Comment
+              content={comment}
+              key={comment}
+              deleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
