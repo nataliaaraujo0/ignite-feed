@@ -6,7 +6,7 @@ import ptBR from "date-fns/locale/pt-BR";
 import { useState } from "react";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([1, 2]);
+  const [comments, setComments] = useState(["post muito bacana, heim?!"]);
 
   function handleCreateNewComment() {
     event.preventDefault();
@@ -68,7 +68,7 @@ export function Post({ author, publishedAt, content }) {
       </form>
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment />;
+          return <Comment content={comment} />;
         })}
       </div>
     </article>
